@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script language="JavaScript">
+            var snumber, product, cost, quantity, discount, final, total, discountAmount;
+            function calculateProduct(snumber,product,cost,quantity) {
+
+                snumber=snumber;
+                product = product;
+                cost=cost;
+                quantity=quantity;
+                discount = 0;
+                discountAmount = 0;
+                final = cost * quantity;
+                
+                if (quantity >= 2) {
+                    if (final > 1000) {
+                        discount = 5;
+                    } else if (final > 500 && final <= 1000) {
+                        discount = 2;
+                    }
+                }
+                discountAmount = (final * discount) / 100;
+                total = final - discountAmount;
+                
+                document.getElementById("sno_out").innerHTML = "Sr.No- " + snumber;
+                document.getElementById("prod_out").innerHTML = "Product Name- " + product;
+                document.getElementById("cost_out").innerHTML = "Product Cost- " + cost;
+                document.getElementById("costb_out").innerHTML = "Amount before discount- " + final;
+                document.getElementById("qty_out").innerHTML = "Total QTY- " + quantity;
+                document.getElementById("dis_out").innerHTML = "Discount %- " + discount;
+                document.getElementById("disval_out").innerHTML = "Discounted Amount- " + discountAmount;
+                document.getElementById("final_out").innerHTML = "Total Amount After Discount- " + total;
+            }
+        </script>
+    </head>
+
+    <body>
+        <button onclick="calculateProduct(101,'Laptops',2000,5)">Get Products</button>
+        
+        <h1 id="sno_out"></h1>
+        <h2 id="prod_out"></h2>
+        <h2 id="cost_out"></h2>
+        <h2 id="qty_out"></h2>
+        <h2 id="dis_out"></h2>
+        <h2 id="costb_out"></h2>
+        <h2 id="disval_out"></h2>
+        <h2 id="final_out"></h2>
+    </body>
+</html>

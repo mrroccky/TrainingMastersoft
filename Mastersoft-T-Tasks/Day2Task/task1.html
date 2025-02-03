@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <script language="JavaScript">
+            function show(){
+                var  name,city,collage,state,country,branch,m1,m2,m3,m4,m5,total;
+                name = document.getElementById("name").value;
+                city = document.getElementById("city").value;
+                collage = document.getElementById("collage").value;
+                state = document.getElementById("state").value;
+                country = document.getElementById("country").value;
+                branch = document.getElementById("branch").value;
+                m1 = parseInt(document.getElementById("m1").value);
+                m2 = parseInt(document.getElementById("m2").value);
+                m3 = parseInt(document.getElementById("m3").value);
+                m4 = parseInt(document.getElementById("m4").value);
+                m5 = parseInt(document.getElementById("m5").value);
+                total = m1+m2+m3+m4+m5;
+                document.getElementById("namedisplay").innerHTML= "Stundent Name: "+name;
+                document.getElementById("citydisplay").innerHTML= "City : "+city;
+                document.getElementById("collagedisplay").innerHTML= "Collage: "+collage;
+                document.getElementById("branchdisplay").innerHTML= "Brnch: "+branch;
+                document.getElementById("totalmarks").innerHTML= "Total Marks: "+total;
+            }
+        </script>
+    </head>
+    <body >
+        <label>Name</label>
+        <br/>
+        <input type="text" id="name">
+        <br/>
+        <label>City</label>
+        <br/>
+        <input type="text" id="city">
+        <br/>
+        <label>Collage</label>
+        <br/>
+        <input type="text" id="collage">
+        <br/>
+        <label>State</label>
+        <br/>
+        <input type="text" id="state">
+        <br/>
+        <label>Country</label>
+        <br/>
+        <input type="text" id="country">
+        <br/>
+        <label>Branch</label>
+        <br/>
+        <input type="text" id="branch">
+        <br/>
+        <!-- numbers -->
+        <label>M1</label>
+        <br/>
+        <input type="number" id="m1">
+        <br/>
+        <label>M2</label>
+        <br/>
+        <input type="number" id="m2">
+        <br/>
+        <label>M3</label>
+        <br/>
+        <input type="number" id="m3">
+        <br/>
+        <label>M4</label>
+        <br/>
+        <input type="number" id="m4">
+        <br/>
+        <label>M5</label>
+        <br/>
+        <input type="number" id="m5">
+        <br/>
+        <p style="color: red;" id="namedisplay"></p>
+        <p id="citydisplay"></p>
+        <p> <mark id="collagedisplay"></mark></p>
+        <p id="branchdisplay"></p>
+        <h1><b><p style="color: blue;" id="totalmarks"></b></p>
+        </h1>
+        <button onclick="show()"> show result</button>
+    </body>
+</html>

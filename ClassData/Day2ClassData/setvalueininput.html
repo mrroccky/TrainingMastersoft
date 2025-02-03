@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script language="JavaScript">
+            function display(){
+                var a,b,c;
+                a= parseInt(document.getElementById("t1").value);
+                b= parseInt(document.getElementById("t2").value);
+                c=a+b;
+                document.getElementById("t3").value=c;
+            }
+        </script>
+    </head>
+    <body>
+        Enter Frist Number
+        <input type="text" id="t1">
+        <br/>
+        enter second number
+        <input type="text" id="t2">
+        <br/>
+        Show Result
+        <input type="text" id="t3">
+        <br/>
+        <button onclick="display()"> show result</button>
+    </body>
+</html>

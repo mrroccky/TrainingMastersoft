@@ -1,0 +1,131 @@
+
+<html>
+    <head>
+        <style type="text/css">
+            body {
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #c2e3f8;
+
+            }
+            .container {
+                display: flex;
+                width: 90%;
+                height: 90%;
+            }
+            .left-container, .right-container {
+                width: 50%;
+                text-align: center;
+            }
+            .left-container {
+                background-color: #1e88e5;
+                color: white;
+            }
+            .right-container {
+                background-color: #abf0f9;
+                color: #333;
+            }
+            input, button {
+                width: 80%;
+                margin: 10px 0;
+                padding: 8px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+            button {
+                background-color: #0d47a1;
+                color: white;
+            }
+        </style>
+        <script language="JavaScript">
+            var total,grade
+            function showresult(){
+                var name,branch,m1,m2,m3,m4,m5;
+                name = document.getElementById("name").value;
+                branch = document.getElementById("branch").value;
+                m1 = parseInt(document.getElementById("m1").value);
+                m2 =parseInt( document.getElementById("m2").value);
+                m3 =parseInt( document.getElementById("m3").value);
+                m4 = parseInt(document.getElementById("m4").value);
+                m5 = parseInt(document.getElementById("m5").value);
+                total= m1+m2+m3+m4+m5;
+                grade(total);
+                document.getElementById("name_out").innerHTML="Name :- "+name;
+                document.getElementById("branch_out").innerHTML="Branch :- "+branch;
+                document.getElementById("total_out").innerHTML="Tota; :- "+total;
+                document.getElementById("grade_out").innerHTML="Grade :- "+grade;
+
+            }
+            function grade(total){
+                if(total>=250){
+                    grade="A";
+                }else if(total>=150 && total<=250){
+                    grade="B";
+                }else{
+                    grade="FAIL";
+                }
+            }
+        </script>
+    </head>
+    <body>
+            <div class="container">
+                <div class="left-container">
+                   <h2 class="heading-text">Result Screen</h2>
+                    <br/>
+                    <label>Name</label>
+                    <br>
+                    <input id="name" type="text"  placeholder="Enter your Name">
+                    <br/>
+                    <label>Branch</label>
+                    <br>
+                    <input id="branch" type="text" placeholder="Enter Branch Name">
+                    <br/>
+                    <label>M1</label>
+                    <br>
+                    <input id="m1" type="text" placeholder="Enter Marksheet 1 Marks">
+                    <br/>
+
+                    <label>M2</label>
+                    <br>
+                    <input id="m2" type="text" placeholder="Enter Marksheet 2 Marks">
+                    <br/>
+                    <label>M3</label>
+                    <br>
+                    <input id="m3" type="text" placeholder="Enter Marksheet 3 Marks">
+                    <br/>
+                    <label>M4</label>
+                    <br>
+                    <input id="m4" type="text" placeholder="Enter Marksheet 4 Marks">
+                    <br/>
+                    <label>M5</label>
+                    <br>
+                    <input id="m5" type="text" placeholder="Enter Marksheet 5 Marks">
+                    <br/>
+                    <button onclick="showresult()">Get Result</button>
+                </div>
+                <!-- ---------------------- -->
+                <div class="right-container">
+                   <h2 class="heading-text">Result Screen</h2>
+                   <h3 id="name_out"></h3>
+                   <h3 id="branch_out"></h3>
+                   <h3 id="total_out"></h3>
+                   <h3 id="grade_out"></h3>
+                </div>
+            </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- task 9
+div 2 assignment -->

@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script langusge="JavaScript">
+            function display(){
+                document.write("hellow world");
+                //function crossing
+                show();
+            }
+            function show(){
+                document.write("City= Nagpur");
+            }
+
+
+            //reciver perameter
+            function paramteterfunction(a){
+                document.write(a);
+            }
+
+            function studentInfo(roll,name){
+                document.write("Roll Number",+roll);
+                document.write("<br/>");
+                document.write("Name",+name);
+            }
+
+            // local global consept
+            var roll1;
+            function rool(roll){
+                document.write("Roll Number",+roll);
+                //pass local data to global variable
+                roll1=roll;
+                printroll()
+            }
+            function printroll(roll){
+                document.write("Roll Number using global variable",+roll1);
+            }
+        </script>
+    </head>
+    <body>
+        <!-- function crossing -->
+        <button onclick="display()">Click me</button>
+        <button onclick="paramteterfunction(100)">parameter function demo</button>
+        <button onclick="studentInfo(101,'Ramesh')">parameter function demo</button>
+        <button onclick="rool(1001)">Print roll using global variable</button>
+
+    </body>
+</html>

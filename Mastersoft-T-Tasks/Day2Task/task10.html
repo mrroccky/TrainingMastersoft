@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script>
+            function submit() {
+                var a = parseInt(document.getElementById("num1").value);
+                var b = parseInt(document.getElementById("num2").value);
+                var choise = parseInt(document.getElementById("choice").value);
+                var c;
+                switch (choise) {
+                    case 1:
+                        c = a + b;
+                        break;
+                    case 2:
+                        c = a - b;
+                        break;
+                    case 3:
+                        c = a * b;
+                        break;
+                    default:
+                        c = "Invalid choice";
+                }
+                document.getElementById("result").innerHTML = "Result: " + c;
+                document.getElementById("res").value=c;
+            }
+        </script>
+    </head>
+
+    <body>
+        Enter first Number
+        <br/>
+        <input type="text" id="num1">
+        <br/>
+        Enter Second Number
+        <br/>
+        <input type="text" id="num2">
+        <br/>
+        Choose Operation: 1 for addition, 2 for subtraction, 3 for multiplication
+        <br/>
+        <input type="text" id="choice">
+        <br/>
+
+        result
+        <br/>
+        <input type="text" id="res">
+        <br/>
+        <p id="result"></p>
+        <button onclick="submit()">Calculate Result</button>
+    </body>
+</html>

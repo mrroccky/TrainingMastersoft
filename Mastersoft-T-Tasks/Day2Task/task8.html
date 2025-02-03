@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script language="JavaScript">
+            var total,grade;
+            function input(roll,name,city,m1,m2,m3,m4,m5){
+                total =m1+m2+m3+m4+m5;
+                grade(total);
+                document.getElementById("rollNumber").innerHTML="Student ID :- "+roll;
+                document.getElementById("name").innerHTML="Student name :- "+name;
+                document.getElementById("city").innerHTML="City :- "+city;
+                document.getElementById("totalmarks").innerHTML="Total Marks :- "+total;
+                document.getElementById("result").innerHTML="GRADE :- "+grade;
+            }
+            function grade(total){
+                if(total>=250){
+                    grade="A";
+                }else if(total>=150 && total<=250){
+                    grade="B";
+                }else{
+                    grade="FAIL";
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <button onclick="input(101,'rohan','nagpur',200,50,50,0,0)" > task7 student has 250+marks</button>
+        <button onclick="input(101,'rohan','nagpur',100,50,40,0,0)" > task7 Student has 150+marks </button>
+        <button onclick="input(101,'rohan','nagpur',100,40,0,0,0)" > task7 student has less than 150 marks</button>
+        <H2>Student Information</H2>
+        <h4 id="rollNumber"></h4>
+        <h4 id="name"></h4>
+        <h4 id="city"></h4>
+        <h4 id="totalmarks"></h4>
+        <h4 id="result"></h4>
+    </body>
+</html>
+<!-- Tak 8 
+conver task 7 (grade function ) into element by id method and dispaly all the student information inside paragraph tag -->

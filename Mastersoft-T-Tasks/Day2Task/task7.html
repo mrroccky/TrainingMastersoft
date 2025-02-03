@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script language="JavaScript">
+            var total;
+            function input(roll,name,city,m1,m2,m3,m4,m5){
+                total =m1+m2+m3+m4+m5;
+                grade(total);
+
+
+            }
+            function grade(total){
+                if(total>=250){
+                    document.write("<h3 style='color:green'>GRADE : A</h3>")
+                }else if(total>=150 && total<=250){
+                    document.write("<h3 style='color:orange'>GRADE : B</h3>")
+                }else{
+                    document.write("<h3 style='color:red'>RESULT : FAIL</h3>")
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <button onclick="input(101,'rohan','nagpur',200,50,50,0,0)" > task7 student has 250+marks</button>
+        <button onclick="input(101,'rohan','nagpur',100,50,40,0,0)" > task7 Student has 150+marks </button>
+        <button onclick="input(101,'rohan','nagpur',100,40,0,0,0)" > task7 student has less than 150 marks</button>
+        <H2>Student Information</H2>
+    </body>
+</html>
+
+
+<!-- Task 7
+	Write a program to generate the following result 
+	create a function - input()
+	create a parameter - roll, name, city ,m1,m2,m3,m4,m5 
+	create an other function - grade()
+	accept only total perameter inside grade(total)
+	check the following condition inside grade()function
+		total>250 -AGrade
+		total>150&&<250 -B Grad
+		esle display fail
+	create an other function - display(){
+		display all the student information inside this function
+	} -->
