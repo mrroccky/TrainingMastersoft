@@ -1,0 +1,47 @@
+Java script string handeling
+
+there are following string handeling function used in java script
+1. lenght
+ var name="Welcome";
+            document.write(name.length)
+2 replace
+	it replace at a time in a string
+	 var s1="Nagpur is A City";
+            var s2 =s1.replace("Nagpur","Pune");
+            document.write(s2);
+3 replaceAll
+4 toUpperCase
+5 toLowerCase
+6 concat
+7 padStart
+8 padend
+ 	    var name="Welcome";
+            var msg="welcomeNagpur";
+            document.write(name.length);
+            document.write(msg.toUpperCase());
+    
+        document.write(msg.toLocaleLowerCase());
+
+
+
+task1  
+	Create A form enter your message - textbox
+	create button - length(is name)uppercase
+
+	create paragraph tag - display result
+	
+Task 2
+	create a form enter your message -textbox
+	find string -textbox 
+	replace string -textbox
+	button - replace - replace all (two buttons)
+	create paragraph text dispaly result:
+
+
+Task 3 
+	enter digit -textBox
+	number of symbol -textbox
+	enter symbol -textbox
+	button -start -end  2btn
+
+	

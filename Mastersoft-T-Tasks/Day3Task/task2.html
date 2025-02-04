@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<script languagr="JavaScript">
+			
+			function replace(){
+			var message = document.getElementById("message").value;
+			var replacetext = document.getElementById("findstring").value;
+			var res= message.replace(message,replacetext);
+			
+				
+			}
+			function replaceAll(){
+			var message = document.getElementById("message").value;
+			var replacetext = document.getElementById("replace").value;
+			var res= message.replace(message,replacetext);
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<form>
+			<lable>Enter Message</lable>
+			<br/>
+			<input id="message" type="text" />
+			
+			<lable>Enter Find Srting</lable>
+			<br/>
+			<input id="findstring" type="text" />
+			
+			<lable>Replace String</lable>
+			<br/>
+			<input id="replace" type="text" />
+			<br/>
+			<button id="Find String">Replace String</button>
+			<br/>
+			<button id="Replace String">ReplaceAll String</button>
+			
+		</form>
+	</body>
+</html>
+
+Task 2
+	create a form enter your message -textbox
+	find string -textbox 
+	replace string -textbox
+	button - replace - replace all (two buttons)
+	create paragraph text dispaly result:

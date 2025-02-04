@@ -1,0 +1,130 @@
+<html>
+
+<head>
+    <style type="text/css">
+        .wrapper {
+            width: 100%;
+            display: flex;
+        }
+
+        .left {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .right {
+            width: 50%;
+            text-align: center;
+            margin-left: 20%;
+            margin-right: 20%;
+            border: 2px solid red;
+        }
+
+        input,
+        button,
+        select {
+            border: 2px solid gray;
+            border-radius: 6px;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function calculateGst() {
+            var tenderCost = parseFloat(document.getElementById("tenderCost_in").value);
+            var gstRate = parseFloat(document.getElementById("gstAmount_in").value);
+            var calculatedGst = (tenderCost * gstRate) / 100;
+            var total = calculatedGst + tenderCost;
+            document.getElementById("gst_out").value = calculatedGst;
+            document.getElementById("total_out").value = total;
+            
+           
+        }
+
+        function showResult() {
+            var name = document.getElementById("name_in").value.trim();
+            var phone = document.getElementById("phone_in").value.trim();
+            var email = document.getElementById("emai_in").value.trim();
+            var tenderNumber = document.getElementById("tenderNumber_in").value.trim();
+            var tenderCost = parseFloat(document.getElementById("tenderCost_in").value);
+            var gstRate = parseFloat(document.getElementById("gstAmount_in").value);
+            var companyType = document.getElementById("companyType").value.trim().toLowerCase();
+            var calculatedGst = (tenderCost * gstRate) / 100;
+            var total = calculatedGst + tenderCost;
+            var incrementVal = 0;
+            var color = "black";
+
+            if (!name || !phone || !email || !tenderNumber || !tenderCost || !gstRate || !companyType) {
+                document.getElementById("error").innerHTML = "ALL FIELDS ARE MANDATORY";
+                return;
+            }else{
+                if (total > 10000 && companyType === "private") {
+                    incrementVal = (total * 5) / 100;
+                    color = "red"; 
+                } else if (total > 5000 && total < 10000 && companyType === "public") {
+                    incrementVal = (total * 7) / 100;
+                    color = "blue";
+                }
+            }
+
+            
+
+            total += incrementVal;
+            document.getElementById("tenderAmount_Red_out").innerHTML = total;
+            document.getElementById("tenderAmount_Red_out").style.color = color; 
+            document.getElementById("tenderAmount_Red_out").innerHTML = total;
+            document.getElementById("gst_out").value = calculatedGst;
+            document.getElementById("total_out").value =total;
+            document.getElementById("name_out").innerHTML = "Name: "+"<b>"+name+"<b/>";
+            document.getElementById("email_out").innerHTML = "Email: "+"<b>"+email+"<b/>";
+            document.getElementById("mobile_out").innerHTML = "Mob: "+"<b>"+phone+"<b/>";
+            document.getElementById("tenderNum_out").innerHTML = "Tender Number: "+"<b>"+tenderNumber+"<b/>";
+            document.getElementById("totalAmount_out").innerHTML = "Total Ammount: "+"<b>"+total+"<b/>";
+            document.getElementById("incriment_out").innerHTML="Incriment Ammount: "+"<b>"+incrementVal+"<b/>";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="left">
+            <h2 style="background-color: red;" id="error"></h2>
+            Enter Name:
+            <input id="name_in" type="text" placeholder="Enter Name">
+            Enter Mobile:
+            <input id="phone_in" type="text" placeholder="Enter Mobile Number">
+            Enter Email:
+            <input id="emai_in" type="text" placeholder="Enter Email Id">
+            Tender Number:
+            <input id="tenderNumber_in" type="text" placeholder="Enter Tender Number">
+            Tender Cost:
+            <input id="tenderCost_in" type="text" placeholder="Enter Tender Cost">
+            GST %:
+            <input id="gstAmount_in" type="text" placeholder="Enter GST %">
+            <button onclick="calculateGst()">Calculate GST</button>
+            GST Amount:
+            <input id="gst_out" type="text" readonly>
+            Total Amount:
+            <input id="total_out" type="text" readonly>
+            Enter Company Type:
+            <input id="companyType" type="text" placeholder="Enter company type">
+            <button onclick="showResult()">Show Result</button>
+        </div>
+    </div>
+    <div class="right">
+        <h2 id="heading_tender" style="color: red;">TENDER RESULT IS</h2>
+        <p id="name_out"></p>
+        <p id="email_out"></p>
+        <p id="mobile_out"></p>
+        <p id="tenderNum_out"></p>
+        <h3 style="color: red;" id="tenderAmount_Red_out"></h3>
+        <h3 style="color: red;" id="tenderAmount_Blue_out"></h3>
+        <p id="totalAmount_out"></p>
+        <p id="incriment_out"></p>
+    </div>
+</body>
+
+</html>

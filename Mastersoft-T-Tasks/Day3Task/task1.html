@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script language="JavaScript">
+            
+           
+           function displayLength(){
+		var message;
+           message=document.getElementById("msg").value;
+		var res=message.length;
+            document.getElementById("show_msg").innerHTML="Length of Message is : " +message.length;
+        }
+            function mtoUpperCase(){
+		var message;
+           message=document.getElementById("msg").value;
+		var res=message.toUpperCase();
+                document.getElementById("show_msg").innerHTML="UpperCase Message is : " +res;
+            }
+            function mtoLowerCase(){
+			var message;
+           	message=document.getElementById("msg").value;
+		    var res=message.toLowerCase();
+                    document.getElementById("show_msg").innerHTML="LowerCase Message is : " +message.toLowerCase();
+            }
+        </script>
+    </head>
+
+    <body>
+        <input id="msg" type="text" />
+        <p id="show_msg"></p>
+        <button onclick="displayLength()">Message length</button>
+        <button onclick="mtoUpperCase()">Make Message UpperCase</button>
+        <button onclick="mtoLowerCase()">Make Message To LowerCase</button>
+
+    </body>
+</html>
