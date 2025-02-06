@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <style>
+        .wrapper{
+            text-align: center;
+            
+        }
+    </style>
+  <script language="JavaScript">
+    function display() {
+      var name = document.getElementById("name").value;
+      var city = document.getElementById("city").value;
+      var qualification = document.getElementById("drop").value;
+      var ssc_per = parseInt(document.getElementById("ssc_per").value);
+      var hsc_per = parseInt(document.getElementById("hsc_per").value);
+      var ug_per = parseInt(document.getElementById("ug_per").value);
+
+      if (name.trim() == "" || city.trim() == "" || ssc_per > 100 || ssc_per < 0 || hsc_per > 100 || hsc_per < 0 || ug_per > 100 || ug_per < 0) {
+        alert("Enter proper value ");
+        return;
+      }
+
+        if (ssc_per > 40 && hsc_per > 40 && ug_per > 40) 
+          {
+          var total = ssc_per + hsc_per + ug_per;
+          var grade = getGrade(total);
+
+          document.getElementById("s1").innerHTML = "Name : " + name;
+          document.getElementById("s2").innerHTML = "City : " + city;
+          document.getElementById("s3").innerHTML = "Highest Qualification : " + qualification;
+          document.getElementById("s4").innerHTML = "SSC marks  : " + ssc_per;
+          document.getElementById("s5").innerHTML = "HSC marks  : " + hsc_per;
+          document.getElementById("s6").innerHTML = "UG marks  : " + ug_per;
+          document.getElementById("s7").innerHTML = "Grades  : " + grade;
+        }
+        else
+        {
+          alert("one of subject contain less than 40 marks ");
+          return;
+        }
+    }
+    function getGrade(total) {
+      if (total > 180) {
+        return "A Grade";
+      }
+      else if (total > 140 && total <= 180) {
+        return "B Grade ";
+      }
+      else
+        return " Failed ";
+
+    }
+  </script>
+</head>
+
+<body >
+  <div class="wrapper">
+    Enter your name:
+    <input type="text" id="name" />
+    </br>
+    Enter your city:
+    <input type="text" id="city" />
+    </br>
+
+    Select highest Qualification :
+    <select id="drop">
+      <option value="ssc">SSC</option>
+      <option value="hsc">HSC</option>
+      <option value="ug">UG</option>
+      <option value="pg">PG</option>
+    </select>
+
+    <br>
+    Enter Your SSC  :
+    <input type="text" id="ssc_per" />
+    <br>
+
+    Enter Your HSC  :
+    <input type="text" id="hsc_per" />
+    <br>
+
+    Enter Your UG :
+    <input type="text" id="ug_per" />
+    <br>
+    <br>
+    <button onclick="display()">Details</button>
+  </div>
+
+  <p id="s1"></p>
+  <p id="s2"></p>
+  <p id="s3"></p>
+  <p id="s4"></p>
+  <p id="s5"></p>
+  <p id="s6"></p>
+  <p id="s7"></p>
+  <p>
+</body>
+
+</html>

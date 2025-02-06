@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.35706.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "basicsfncreation", "basicsfncreation\basicsfncreation.csproj", "{37AA1500-FF37-41C0-99A9-183FC8C9C589}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37AA1500-FF37-41C0-99A9-183FC8C9C589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37AA1500-FF37-41C0-99A9-183FC8C9C589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37AA1500-FF37-41C0-99A9-183FC8C9C589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37AA1500-FF37-41C0-99A9-183FC8C9C589}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B627DFB-47E8-40F5-A2D2-0A31F1D58993}
+	EndGlobalSection
+EndGlobal

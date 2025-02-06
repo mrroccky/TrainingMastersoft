@@ -33,6 +33,7 @@
         }
     </style>
     <script>
+        var incrementVal, afterincrimentamount
         function calculateGst() {
             var tenderCost = parseFloat(document.getElementById("tenderCost_in").value);
             var gstRate = parseFloat(document.getElementById("gstAmount_in").value);
@@ -62,27 +63,33 @@
                 return;
             }else{
                 if (total > 10000 && companyType === "private") {
-                    incrementVal = (total * 5) / 100;
+                    incrementVal = total*0.05;
                     color = "red"; 
                 } else if (total > 5000 && total < 10000 && companyType === "public") {
-                    incrementVal = (total * 7) / 100;
+                    incrementVal = total*0.07;
                     color = "blue";
+                }else if(total>2500 && total<5000 && companyType=="gov"){
+                    incrementVal = total*0.02;
+                    color="black"
+                }else{
+                    afterincrimentamount = total;
+                    incrementVal=0;
                 }
             }
 
             
 
             total += incrementVal;
-            document.getElementById("tenderAmount_Red_out").innerHTML = total;
-            document.getElementById("tenderAmount_Red_out").style.color = color; 
-            document.getElementById("tenderAmount_Red_out").innerHTML = total;
+         //   document.getElementById("tenderAmount_Red_out").innerHTML = total;
+           // document.getElementById("tenderAmount_Red_out").style.color = color; 
+            //document.getElementById("tenderAmount_Red_out").innerHTML = total;
             document.getElementById("gst_out").value = calculatedGst;
             document.getElementById("total_out").value =total;
             document.getElementById("name_out").innerHTML = "Name: "+"<b>"+name+"<b/>";
             document.getElementById("email_out").innerHTML = "Email: "+"<b>"+email+"<b/>";
             document.getElementById("mobile_out").innerHTML = "Mob: "+"<b>"+phone+"<b/>";
             document.getElementById("tenderNum_out").innerHTML = "Tender Number: "+"<b>"+tenderNumber+"<b/>";
-            document.getElementById("totalAmount_out").innerHTML = "Total Ammount: "+"<b>"+total+"<b/>";
+            document.getElementById("totalAmount_out").innerHTML = "Total Ammount after incriment: "+"<b>"+afterincrimentamount+"<b/>";
             document.getElementById("incriment_out").innerHTML="Incriment Ammount: "+"<b>"+incrementVal+"<b/>";
         }
     </script>
@@ -120,8 +127,8 @@
         <p id="email_out"></p>
         <p id="mobile_out"></p>
         <p id="tenderNum_out"></p>
-        <h3 style="color: red;" id="tenderAmount_Red_out"></h3>
-        <h3 style="color: red;" id="tenderAmount_Blue_out"></h3>
+        <!-- <h3 style="color: red;" id="tenderAmount_Red_out"></h3> -->
+        <!-- <h3 style="color: red;" id="tenderAmount_Blue_out"></h3> -->
         <p id="totalAmount_out"></p>
         <p id="incriment_out"></p>
     </div>
