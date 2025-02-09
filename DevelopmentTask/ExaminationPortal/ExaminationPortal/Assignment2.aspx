@@ -31,7 +31,6 @@
             Select your photo :
             <asp:DropDownList ID="ddlSelectPic" runat="server" OnSelectedIndexChanged="ddlSelectPic_SelectedIndexChanged" AutoPostBack="True">
             </asp:DropDownList>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br />
             <br />
             <asp:Image ID="iiCandidateImage" runat="server" Height="346px" Width="412px" />
