@@ -32,7 +32,7 @@
         <p>
             <asp:Button ID="btnSubmit" runat="server" OnClick="Button1_Click" Text="Submit" Width="169px" />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click2" Text="Multiplication" />
-            <asp:Button ID="Button2" runat="server" Text="Button" />
+            <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" />
         </p>
         <ol>
             <li>Generate student grade system</li>
