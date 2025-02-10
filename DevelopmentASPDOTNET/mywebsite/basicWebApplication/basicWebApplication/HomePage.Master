@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomePage.master.cs" Inherits="basicWebApplication.HomePage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+       
+
+        Priyadarshani Collage of Engineering<br />
+        <br />
+        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" PostBackUrl="~/AboutPage.aspx">About</asp:LinkButton>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/ContactPage.aspx">Contact</asp:LinkButton>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/RegistratioPage.aspx">Registration</asp:LinkButton>
+        <br />
+        <br />
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <br />
+        <br />
+        Developed By -Rakesh Bhure</form>
+</body>
+</html>

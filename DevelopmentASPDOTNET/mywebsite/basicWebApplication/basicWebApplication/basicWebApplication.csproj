@@ -67,10 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutPage.aspx" />
     <Content Include="assignment1.aspx" />
     <Content Include="Assignment2.aspx" />
     <Content Include="ButtonRadio.aspx" />
     <Content Include="City.aspx" />
+    <Content Include="ContactPage.aspx" />
+    <Content Include="CookiesDemo.aspx" />
     <Content Include="DataUpload.aspx" />
     <Content Include="default.aspx" />
     <Content Include="empDate.aspx" />
@@ -78,11 +81,24 @@
     <Content Include="Page2.aspx" />
     <Content Include="PageConatint.aspx" />
     <Content Include="PageNavigation.aspx" />
+    <Content Include="PageValidation.aspx" />
     <Content Include="q1.aspx" />
     <Content Include="q2.aspx" />
+    <Content Include="RegistratioPage.aspx" />
+    <Content Include="StateApplicationDemo.aspx" />
+    <Content Include="validateClientDemo.aspx" />
+    <Content Include="ValidationSummaryDemo.aspx" />
+    <Content Include="ViewSateDemo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutPage.aspx.cs">
+      <DependentUpon>AboutPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutPage.aspx.designer.cs">
+      <DependentUpon>AboutPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="assignment1.aspx.cs">
       <DependentUpon>assignment1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -111,6 +127,20 @@
     <Compile Include="City.aspx.designer.cs">
       <DependentUpon>City.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ContactPage.aspx.cs">
+      <DependentUpon>ContactPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactPage.aspx.designer.cs">
+      <DependentUpon>ContactPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CookiesDemo.aspx.cs">
+      <DependentUpon>CookiesDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CookiesDemo.aspx.designer.cs">
+      <DependentUpon>CookiesDemo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DataUpload.aspx.cs">
       <DependentUpon>DataUpload.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -131,6 +161,13 @@
     </Compile>
     <Compile Include="empDate.aspx.designer.cs">
       <DependentUpon>empDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.Master.cs">
+      <DependentUpon>HomePage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage.Master.designer.cs">
+      <DependentUpon>HomePage.Master</DependentUpon>
     </Compile>
     <Compile Include="Page1.aspx.cs">
       <DependentUpon>Page1.aspx</DependentUpon>
@@ -160,6 +197,13 @@
     <Compile Include="PageNavigation.aspx.designer.cs">
       <DependentUpon>PageNavigation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PageValidation.aspx.cs">
+      <DependentUpon>PageValidation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageValidation.aspx.designer.cs">
+      <DependentUpon>PageValidation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="q1.aspx.cs">
       <DependentUpon>q1.aspx</DependentUpon>
@@ -175,8 +219,44 @@
     <Compile Include="q2.aspx.designer.cs">
       <DependentUpon>q2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RegistratioPage.aspx.cs">
+      <DependentUpon>RegistratioPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistratioPage.aspx.designer.cs">
+      <DependentUpon>RegistratioPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StateApplicationDemo.aspx.cs">
+      <DependentUpon>StateApplicationDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StateApplicationDemo.aspx.designer.cs">
+      <DependentUpon>StateApplicationDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="validateClientDemo.aspx.cs">
+      <DependentUpon>validateClientDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="validateClientDemo.aspx.designer.cs">
+      <DependentUpon>validateClientDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ValidationSummaryDemo.aspx.cs">
+      <DependentUpon>ValidationSummaryDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ValidationSummaryDemo.aspx.designer.cs">
+      <DependentUpon>ValidationSummaryDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSateDemo.aspx.cs">
+      <DependentUpon>ViewSateDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSateDemo.aspx.designer.cs">
+      <DependentUpon>ViewSateDemo.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HomePage.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
