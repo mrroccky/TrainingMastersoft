@@ -7,7 +7,7 @@
     <title>Login</title>
     <style type="text/css">
         body {
-    background-color: #f4f4f4;
+     background-color: #FFF4EB;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,10 +32,10 @@ h2 {
 
 
 .input-field {
+    border-radius:12px;
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 4px;
     font-size: 14px;
 }
 
@@ -45,26 +45,24 @@ h2 {
 }
 
 .btn {
-    width: 100%;
-    background: #007BFF;
-    color: white;
+    border-radius:16px;
+     background: #eb8634;
+     color: white;
     padding: 10px;
     border: none;
-    border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
 }
 
 .btn:hover {
-    background: #0056b3;
+    background-color:black;
 }
 
 .link {
     display: block;
     text-align: center;
     margin-top: 10px;
-    color: #007BFF;
     text-decoration: none;
 }
 
@@ -94,6 +92,8 @@ h2 {
             </div>
 
             <asp:Label ID="lblError" runat="server" CssClass="error-message"></asp:Label>
+
+            <br />
 
             <asp:Button ID="btnLogIn" runat="server" OnClick="btnLogIn_Click" Text="Log In" CssClass="btn" />
 

@@ -5,16 +5,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <style type="text/css">
+        body {
+            background-color: #FFF4EB;
+        }
+
         .wrapper {
-           display: flex;
-            justify-content: space-between;
-            width: 80%; 
+            display: flex;
+           align-items: anchor-center;
+            justify-content: center;
+            width: 80%;
             margin: 0 auto;
         }
 
         .text-center {
             text-align: center;
-            text-transform:uppercase;
+            text-transform: uppercase;
         }
 
         .left-div {
@@ -26,25 +31,26 @@
         }
 
         .input-field {
+            width: 110%;
             padding: 8px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 16px;
         }
 
         .btn {
             width: 100%;
-            background: #007BFF;
+            background: #eb8634;
             color: white;
             padding: 10px;
             border: none;
-            border-radius: 4px;
+            border-radius: 16px;
             font-size: 16px;
             cursor: pointer;
             margin-top: 10px;
         }
 
             .btn:hover {
-                background: #0056b3;
+                background: black;
             }
 
         .bottom-div {
@@ -57,7 +63,14 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
     </style>
+   
+
     <title></title>
 </head>
 <body>
@@ -79,6 +92,11 @@
             </div>
         </div>
         <div class="bottom-div">
+            <p>
+
+                <asp:Label ID="lblError" runat="server" CssClass="error-message"></asp:Label>
+
+            </p>
             <p>
                 Upload Resume :&nbsp;
             <asp:FileUpload ID="btnFileBrows" runat="server" />

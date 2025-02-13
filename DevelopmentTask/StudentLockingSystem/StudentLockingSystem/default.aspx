@@ -7,7 +7,7 @@
     <title></title>
     <style type="text/css">
          body {
-            background-color: #f4f4f4;
+            background-color: #FFF4EB;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -15,7 +15,7 @@
             margin: 0;
         }
         .container {
-            background: white;
+            background: #FFF4EB;
             padding: 20px;
             width: 350px;
         }
@@ -28,10 +28,10 @@
             margin-bottom: 12px;
         }
         .txtinput {
+            border-radius:12px;
             width: 100%;
             padding: 8px;
             border: 1px solid #ccc;
-            border-radius: 4px;
             font-size: 14px;
         }
         .error {
@@ -39,31 +39,38 @@
             font-size: 12px;
         }
         .btn {
-    width: 100%;
-    background: #007BFF;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-top: 10px;
+            width: 100%;
+            background: #eb8634;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 16px;
+            font-size: 16px;
+            margin-top: 10px;
 }
 
 .btn:hover {
-    background: #0056b3;
+    background: #211308;
 }
        .link {
     display: block;
     text-align: center;
     margin-top: 10px;
-    color: #007BFF;
+    color: #f8a969;
     text-decoration: none;
 }
 
 .link:hover {
     text-decoration: underline;
 }
-    </style>
+    
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -74,6 +81,8 @@
             &nbsp;<asp:TextBox CssClass="txtinput" ID="txtName" runat="server"></asp:TextBox>
             <br />
             Enter mobile :&nbsp;<asp:RegularExpressionValidator ID="mobileexpressionVaLIDATOR" runat="server" ControlToValidate="txtMobile" ErrorMessage="Allowed 10 digit mobile number" ValidationExpression="\d{10}" ForeColor="#CC0000"></asp:RegularExpressionValidator>
+            <br />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtMobile" ErrorMessage="Number required" ForeColor="#CC0000"></asp:RequiredFieldValidator>
             &nbsp;<asp:TextBox CssClass="txtinput" ID="txtMobile" runat="server"></asp:TextBox>
             &nbsp;<br />
             Enter email :<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtEmail" ErrorMessage="Enter proper email" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="#CC0000"></asp:RegularExpressionValidator>
@@ -81,7 +90,9 @@
             <br />
             Enter password :<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password required" ForeColor="#CC0000"></asp:RequiredFieldValidator>
             &nbsp;<asp:TextBox CssClass="txtinput" ID="txtPassword" type="password" runat="server"></asp:TextBox>
-            &nbsp;<br />
+            &nbsp;<label for="txtEmailCheck"><asp:Label ID="lblError" runat="server" CssClass="error-message"></asp:Label>
+            </label>
+            <br />
             Upload photo :
             <asp:FileUpload ID="btnBrowseImage" runat="server" />
 &nbsp;<asp:Button ID="btnUpload" runat="server" OnClick="btnUpload_Click" Text="Upload" />

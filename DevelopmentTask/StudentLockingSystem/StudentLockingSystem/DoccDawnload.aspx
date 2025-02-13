@@ -6,145 +6,169 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        
-       .wrapper {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: 0 auto; 
-    padding: 0 10%; 
-}
+        body {
+            background-color: #FFF4EB;
+        }
 
-.text-center {
-    text-align: center;
-    text-transform:uppercase;
-}
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: 0 auto;
+            padding: 0 10%;
+        }
 
-.left-div {
-    padding-top: 30px;
-}
+        .text-center {
+            text-align: center;
+            text-transform: uppercase;
+        }
 
-.right-div {
-    text-align: right; 
-}
+        .left-div {
+            padding-top: 30px;
+        }
 
-.bottom-div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    margin: 20px auto;
-    padding-left: 10%;
-}
+        .right-div {
+            text-align: right;
+        }
 
-.input-field {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+        .bottom-div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            margin: 20px auto;
+            padding-left: 10%;
+        }
 
-.btn {
-    width: 40%;
-    background: #007BFF;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-}
+        .input-field {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-.btn:hover {
-    background: #0056b3;
-}
+        .btn {
+            width: 40%;
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
 
-#tbldawnload {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
-}
+            .btn:hover {
+                background: #0056b3;
+            }
 
-#tbldawnload td, #tbldawnload th {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
-}
+        #tbldawnload {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
 
-#btnLogOut {
-    display: block;
-    width: 10%;
-    background: red;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 20px auto;
-    text-align: center;
-}
+            #tbldawnload td, #tbldawnload th {
+                border: 1px solid #ccc;
+                padding: 8px;
+                text-align: center;
+            }
 
-#btnLogOut:hover {
-    background: darkred;
-}
+        #btnLogOut {
+            display: block;
+            width: 10%;
+            background: red;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 20px auto;
+            text-align: center;
+        }
 
+            #btnLogOut:hover {
+                background: darkred;
+            }
 
+        Label {
+            width: 100%;
+            text-align: center;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-         <h2 class="text-center">Document Dawnload form</h2>
+        <h2 class="text-center">Document Dawnload form</h2>
         <div>
-             <div class="wrapper">
-        <div class="left-div">
-            <br />
-            <br />
-            Name :
+            <div class="wrapper">
+                <div class="left-div">
+                    <br />
+                    <br />
+                    Name :
             <asp:Label ID="lblName" runat="server" Text="Label"></asp:Label>
-            <br />
-            Email :
+                    <br />
+                    Email :
             <asp:Label ID="lblEmail" runat="server" Text="Label"></asp:Label>
+                </div>
+                <div class="right-div">
+                    <asp:Image ID="iiImage" runat="server" Height="273px" Width="249px" />
+                </div>
+            </div>
         </div>
-        <div class="right-div">
-            <asp:Image ID="iiImage" runat="server" Height="273px" Width="249px" />
+
+        <div style="margin-left: 520px">
+            <asp:Label ID="lblError" runat="server" CssClass="error-message"></asp:Label>
         </div>
-        </div>
-        </div>
+
+        <br />
         <asp:Table ID="tbldawnload" runat="server" Height="207px" Width="1037px">
-    <asp:TableRow runat="server">
-        <asp:TableCell runat="server">S.No</asp:TableCell>
-        <asp:TableCell runat="server">Document Name</asp:TableCell>
-        <asp:TableCell runat="server">Password</asp:TableCell>
-        <asp:TableCell runat="server">Button</asp:TableCell>
-        <asp:TableCell runat="server">Download Link</asp:TableCell>
-    </asp:TableRow>
-    <asp:TableRow runat="server">
-        <asp:TableCell runat="server">1</asp:TableCell>
-        <asp:TableCell runat="server"><asp:Label ID="lblResumeName" runat="server" Text=""></asp:Label></asp:TableCell>
-        <asp:TableCell runat="server"><asp:TextBox ID="txtPassResume" runat="server"></asp:TextBox></asp:TableCell>
-        <asp:TableCell runat="server"><asp:Button ID="btnPassCheckResume" OnClick="btnResumePassCheckPage_Click" runat="server" Text="Active" /></asp:TableCell>
-        <asp:TableCell runat="server"><asp:HyperLink ID="linkDawnloadResume" runat="server">Download</asp:HyperLink></asp:TableCell>
-    </asp:TableRow>
-    <asp:TableRow runat="server">
-        <asp:TableCell runat="server">2</asp:TableCell>
-        <asp:TableCell runat="server"><asp:Label ID="lblDegreeName" runat="server" Text=""></asp:Label></asp:TableCell>
-        <asp:TableCell runat="server"><asp:TextBox ID="txtPassDegree" runat="server"></asp:TextBox></asp:TableCell>
-        <asp:TableCell runat="server"><asp:Button ID="btnPassCheckDegree" OnClick="btnDegreePassCheckPage_Click" runat="server" Text="Active" /></asp:TableCell>
-        <asp:TableCell runat="server"><asp:HyperLink ID="linkDawnloadDegree" runat="server">Download</asp:HyperLink></asp:TableCell>
-    </asp:TableRow>
-</asp:Table>
+            <asp:TableRow runat="server">
+                <asp:TableCell runat="server">S.No</asp:TableCell>
+                <asp:TableCell runat="server">Document Name</asp:TableCell>
+                <asp:TableCell runat="server">Password</asp:TableCell>
+                <asp:TableCell runat="server">Button</asp:TableCell>
+                <asp:TableCell runat="server">Download Link</asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow runat="server">
+                <asp:TableCell runat="server">1</asp:TableCell>
+                <asp:TableCell runat="server">
+                    <asp:Label ID="lblResumeName" runat="server" Text=""></asp:Label></asp:TableCell>
+                <asp:TableCell runat="server">
+                    <asp:TextBox ID="txtPassResume" runat="server"></asp:TextBox></asp:TableCell>
+                <asp:TableCell runat="server">
+                    <asp:Button ID="btnPassCheckResume" OnClick="btnResumePassCheckPage_Click" runat="server" Text="Active" /></asp:TableCell>
+                <asp:TableCell runat="server">
+                    <asp:HyperLink ID="linkDawnloadResume" runat="server">Download</asp:HyperLink></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow runat="server">
+                <asp:TableCell runat="server">2</asp:TableCell>
+                <asp:TableCell runat="server">
+                    <asp:Label ID="lblDegreeName" runat="server" Text=""></asp:Label></asp:TableCell>
+                <asp:TableCell runat="server">
+                    <asp:TextBox ID="txtPassDegree" runat="server"></asp:TextBox></asp:TableCell>
+                <asp:TableCell runat="server">
+                    <asp:Button ID="btnPassCheckDegree" OnClick="btnDegreePassCheckPage_Click" runat="server" Text="Active" /></asp:TableCell>
+                <asp:TableCell runat="server">
+                    <asp:HyperLink ID="linkDawnloadDegree" runat="server">Download</asp:HyperLink></asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
 
         <br />
 
-        
+
         <br />
         <asp:Button ID="btnLogOut" runat="server" OnClick="btnLogOut_Click" Text="Log Out" />
         <br />
-        
+
     </form>
-    <table  id="tableid" style="height: 333px; width: 912px">
-                 
+    <table id="tableid" style="height: 333px; width: 912px">
     </table>
 </body>
 </html>

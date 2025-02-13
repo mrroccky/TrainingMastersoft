@@ -68,6 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutPage.aspx" />
+    <Content Include="App_Data\collage.mdf" />
+    <Content Include="App_Data\collage_log.ldf">
+      <DependentUpon>collage.mdf</DependentUpon>
+    </Content>
     <Content Include="assignment1.aspx" />
     <Content Include="Assignment2.aspx" />
     <Content Include="ButtonRadio.aspx" />
@@ -77,6 +81,9 @@
     <Content Include="DataUpload.aspx" />
     <Content Include="default.aspx" />
     <Content Include="empDate.aspx" />
+    <Content Include="FinalQauary.aspx" />
+    <Content Include="FinalQuary2.aspx" />
+    <Content Include="FinalQuary3.aspx" />
     <Content Include="Page1.aspx" />
     <Content Include="Page2.aspx" />
     <Content Include="PageConatint.aspx" />
@@ -161,6 +168,27 @@
     </Compile>
     <Compile Include="empDate.aspx.designer.cs">
       <DependentUpon>empDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinalQauary.aspx.cs">
+      <DependentUpon>FinalQauary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinalQauary.aspx.designer.cs">
+      <DependentUpon>FinalQauary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinalQuary2.aspx.cs">
+      <DependentUpon>FinalQuary2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinalQuary2.aspx.designer.cs">
+      <DependentUpon>FinalQuary2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinalQuary3.aspx.cs">
+      <DependentUpon>FinalQuary3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinalQuary3.aspx.designer.cs">
+      <DependentUpon>FinalQuary3.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomePage.Master.cs">
       <DependentUpon>HomePage.Master</DependentUpon>
@@ -257,7 +285,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HomePage.Master" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -16,6 +16,8 @@ namespace StudentLockingSystem
                 lblName.Text = Session["name"].ToString();
                 lblEmail.Text = Session["email"].ToString();
                 iiImage.ImageUrl = "~/student-image/" + Session["ImageName"].ToString();
+               // btnUpload.Attributes.Add("onclick", "validationCheckedAllowOnlyJpg()");
+
             } catch(Exception)
             {
                 //in case we dont have value in session so simplay redirecting user to registration page (default page)
@@ -29,7 +31,7 @@ namespace StudentLockingSystem
             //creating chech so user cant navigate furter before uploading data 
             try
             {
-                if (Session["resume-fileName"].ToString() != null && Session["degree-fileName"].ToString() != null)
+                if (Session["resume-file"].ToString() != "" && Session["degree-fileName"].ToString() != "")
                 {
                     //precheck for password so the user enter proper password and we create sessions before navigating user
                     if(txtPassProtectResume.Text  !=null && txtPassProtectDegree.Text != null)
@@ -40,13 +42,15 @@ namespace StudentLockingSystem
                     }
                     else
                     {
-                        Response.Write($"<script language='JavaScript'> alert('Protect files with password');</script>");
+                        lblError.Text = "Protect files with password 😣";
+                        lblError.ForeColor = System.Drawing.Color.Red;
                     }
                     
                 }
                 else
                 {
-                    Response.Write($"<script language='JavaScript'> alert('Please Upload Files Properly');</script>");
+                    lblError.Text = "Protect files with password 😣";
+                    lblError.ForeColor = System.Drawing.Color.Red;
                 }
             }
             catch (Exception)
@@ -63,33 +67,80 @@ namespace StudentLockingSystem
             //and creating session 
             try
             {
-                btnFileBrows.SaveAs(Server.MapPath("~") + "//resum-file//" + btnFileBrows.FileName);
-                
-                Session["resume-fileName"] = btnFileBrows.FileName;
+                if (btnFileBrows.FileName !="" ) // Check if a file is selected
+                {
+                    string fileName = btnFileBrows.FileName;
+                    string fileExtension = System.IO.Path.GetExtension(fileName).ToLower();
+
+                    if (fileExtension == ".pdf") // Allow only PDFs
+                    {
+                        string savePath = Server.MapPath("~") + "//resum-file//" + fileName;
+                        btnFileBrows.SaveAs(savePath);
+
+                        // Store the uploaded file in session
+                        Session["resume-file"] = fileName;
+
+                        lblError.Text = fileName + " uploaded successfully! 🥳";
+                        lblError.ForeColor = System.Drawing.Color.Green;
+                    }
+                    else
+                    {
+                        lblError.Text = "Invalid file type! Please upload a PDF file. 😣";
+                        lblError.ForeColor = System.Drawing.Color.Red;
+                    }
+                }
+                else
+                {
+                    lblError.Text = "Please choose a file before uploading. 😣";
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                }
             }
             catch (Exception)
             {
-                Response.Write($"<script language='JavaScript'> alert('error while uploading file retray uploading!');</script>");
+                lblError.Text = "Error uploading file! Please try again. 😣";
+                lblError.ForeColor = System.Drawing.Color.Red;
             }
-            
-           
+
+
+            //call to chech pdf was in 
         }
 
         protected void btnUpload2_Click(object sender, EventArgs e)
         {
             //onclick of this buton setting user inside degree-image location
             //and creating session 
+            string fileName = btnFileBrows2.FileName;
+            string fileExtension = System.IO.Path.GetExtension(fileName).ToLower();
             try
             {
-                btnFileBrows2.SaveAs(Server.MapPath("~") + "//degree-image//" + btnFileBrows2.FileName);
-                Session["degree-fileName"] = btnFileBrows2.FileName;
+                if (btnFileBrows2.FileName != "" )
+                {
+                    if (fileExtension == ".jpg")
+                {
+                    btnFileBrows2.SaveAs(Server.MapPath("~") + "//degree-image//" + btnFileBrows2.FileName);
+                    Session["degree-fileName"] = btnFileBrows2.FileName;
+                    lblError.Text = btnFileBrows2.FileName + "Picture uploaded Sucessfully 🥳";
+                    lblError.ForeColor = System.Drawing.Color.Green;
+                }
+                else
+                {
+                    lblError.Text = "Error uploading file try file with Jpg extension 😣";
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                }
+                }
+                else
+                {
+                    lblError.Text = "Please Chose file!. 😣";
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                }
             }
             catch (Exception)
             {
-                Response.Write($"<script language='JavaScript'> alert('error while uploading file retray uploading!');</script>");
+                lblError.Text = "Error uploading file try again 😣";
+                lblError.ForeColor = System.Drawing.Color.Red;
             }
-            
-           
+
+            //call to chech pdf was in 
         }
     }
 }

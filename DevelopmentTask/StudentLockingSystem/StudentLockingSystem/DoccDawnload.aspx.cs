@@ -17,13 +17,13 @@ namespace StudentLockingSystem
                 iiImage.ImageUrl = "~/student-image/" + Session["ImageName"].ToString();
                 lblName.Text = Session["name"].ToString();
                 lblEmail.Text = Session["email"].ToString();
-                lblResumeName.Text = Session["resume-fileName"].ToString();
+                lblResumeName.Text = Session["resume-file"].ToString();
                 lblDegreeName.Text = Session["degree-fileName"].ToString();
                 
             }
-            catch (Exception ecxec)
+            catch (Exception)
             {
-                Response.Write($"<script language='JavaScript'> alert('Error: {ecxec}');</script>");
+                Response.Redirect("default.aspx");
             }
 
 
@@ -37,17 +37,21 @@ namespace StudentLockingSystem
             try {
                 if (txtPassResume.Text == Session["resume-pass"].ToString())
                 {
-                    linkDawnloadResume.NavigateUrl = "~/resum-file/" + Session["resume-fileName"].ToString();
+                    lblError.Text = "Unlocked Sucessfully click on dawnload link 🥳";
+                    lblError.ForeColor = System.Drawing.Color.Green;
+                    linkDawnloadResume.NavigateUrl = "~/resum-file/" + Session["resume-file"].ToString();
                     linkDawnloadResume.Text = "Dawnload Resume";
                 }
                 else
                 {
-                    Response.Write($"<script language='JavaScript'> alert('Wrong password');</script>");
+                    lblError.Text = "Wrong Password! try again 😣";
+                    lblError.ForeColor = System.Drawing.Color.Red;
                 }
             }
             catch (Exception)
             {
-                Response.Write($"<script language='JavaScript'> alert('Error: try diffrent Password');</script>");
+                lblError.Text = "Wrong Password! try again 😣";
+                lblError.ForeColor = System.Drawing.Color.Red;
             }
 
 
@@ -61,17 +65,21 @@ namespace StudentLockingSystem
             {
                 if (txtPassDegree.Text == Session["degree-pass"].ToString())
                 {
+                    lblError.Text = "Unlocked Sucessfully click on dawnload link 🥳";
+                    lblError.ForeColor = System.Drawing.Color.Green;
                     linkDawnloadDegree.NavigateUrl = "~/degree-image/" + Session["degree-fileName"].ToString();
                     linkDawnloadDegree.Text = "Dawnload Degree";
                 }
                 else
                 {
-                    Response.Write($"<script language='JavaScript'> alert('Wrong password');</script>");
+                    lblError.Text = "Wrong Password! try again 😣";
+                    lblError.ForeColor = System.Drawing.Color.Red;
                 }
             }
             catch (Exception)
             {
-                Response.Write($"<script language='JavaScript'> alert('Error: try diffrent Password');</script>");
+                lblError.Text = "Wrong Password! try again 😣";
+                lblError.ForeColor = System.Drawing.Color.Red;
             }
             
         }

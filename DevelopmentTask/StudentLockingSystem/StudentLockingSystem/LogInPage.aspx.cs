@@ -39,14 +39,16 @@ namespace StudentLockingSystem
                     else
                     {
                     //setting lable text as wrong password
-                        lblError.Text = "Wrong Password Not match";
-                    }
+                    lblError.Text = "Incorrect Credentials 🤭";
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                }
                  
             }
             catch (Exception err)
             {
                 //catching unknown errors
-                lblError.Text = "Error: Wrong login Credentrials"+err;
+                lblError.Text = "Incorrect Credentials 🤭";
+                lblError.ForeColor = System.Drawing.Color.Red;
             }
             
         }

@@ -13,22 +13,44 @@ namespace StudentLockingSystem
         {
             //we need textfeild value as today date as page get load 
             txtDate.Text = (string)DateTime.Now.ToString("dd/MM/yyyy");
+            ViewState["ImageName"] = false;
         }
 
 
         protected void btnUpload_Click(object sender, EventArgs e)
         {
+
+
+            string fileName = btnBrowseImage.FileName;
+            string fileExtension = System.IO.Path.GetExtension(fileName).ToLower();
             try
             {
-                //setting image inside student folder
-                btnBrowseImage.SaveAs(Server.MapPath("~") + "//student-image//" + btnBrowseImage.FileName);
-                //creating session and assigning value of image file 
-                Session["ImageName"] = btnBrowseImage.FileName;
+                if (btnBrowseImage.FileName != "")
+                {
+                    if (fileExtension == ".jpg")
+                    {
+                        ViewState["ImageName"] = true;
+                        btnBrowseImage.SaveAs(Server.MapPath("~") + "//student-image//" + btnBrowseImage.FileName);
+                        Session["ImageName"] = btnBrowseImage.FileName;
+                        lblError.Text = btnBrowseImage.FileName + "uploaded Sucessfully 🥳";
+                        lblError.ForeColor = System.Drawing.Color.Green;
+                    }
+                    else
+                    {
+                        lblError.Text = "Error uploading file try file with jpg extension 😣";
+                        lblError.ForeColor = System.Drawing.Color.Red;
+                    }
+                }
+                else
+                {
+                    lblError.Text = "Please Chose file!. 😣";
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                }
             }
             catch (Exception)
             {
-                //tere might be unknown error so well display error as upload pic again
-                Response.Write("<script language='JavaScript'> alert('Upload Picture properly');</script>");
+                lblError.Text = "Error uploading file try again 😣";
+                lblError.ForeColor = System.Drawing.Color.Red;
             }
         }
 
@@ -39,7 +61,7 @@ namespace StudentLockingSystem
             {
                 
                 //check that nnothing will be kept empty before redirecting to login page 
-                if (txtName.Text != null && txtEmail.Text != null && txtMobile.Text != null && txtPassword.Text != null && txtDate.Text != null && Session["ImageName"].ToString() !=null )
+                if (txtName.Text != "" && txtEmail.Text != "" && txtMobile.Text != "" && txtPassword.Text != "" && txtDate.Text != "" && ViewState["ImageName"].ToString() !="false" )
                 {
                     //creating session and asigning user input for further checks and use   
                     //its wrong approach to set password value before hashing but it will workin demo project
@@ -48,21 +70,19 @@ namespace StudentLockingSystem
                     Session["email"] = txtEmail.Text;
                     Session["password"] = txtPassword.Text;
                     Session["date"] = txtDate.Text;
-                 
+                    //if all condition are good then redirecting to login page
+                    Response.Redirect("LogInPage.aspx");
                 }
                 else
                 {
-                    Response.Write("<script language='JavaScript'> alert('Enter information Properly');</script>");
+                    lblError.Text = "Fields Cant be empty !😣";
+                    lblError.ForeColor = System.Drawing.Color.Red;
                 }
             }
             catch(Exception)
             {
-                Response.Write($"<script language='JavaScript'> alert('Enter information Properly ');</script>");
-            }
-            finally
-            {
-                //if all condition are good then redirecting to login page
-                Response.Redirect("LogInPage.aspx");
+                lblError.Text = "Error try again !😣";
+                lblError.ForeColor = System.Drawing.Color.Red;
             }
             
 
